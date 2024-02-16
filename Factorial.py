@@ -8,10 +8,11 @@ def factorial(n):
   return {"result":r},200
 
 def calculate(n):
-  if n <= 0:
-    return 1
-  else:
-    return n * calculate(n-1)
+  total = 1
+  for i in range(0,n-1):
+    total = total * (n-i)
+
+  return total
 
 if __name__ == "__main__":
   app.run(host="localhost",port=7000)
